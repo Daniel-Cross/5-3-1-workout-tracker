@@ -4,4 +4,8 @@
     url('../images/girl.jpeg');
   background-size: cover;
   color: white;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }

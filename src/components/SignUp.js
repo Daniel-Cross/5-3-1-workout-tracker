@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/SignUp.css';
 import { Link, Route } from 'react-router-dom';
-import Register from './Register';
 
 const SignUp = () => {
   return (

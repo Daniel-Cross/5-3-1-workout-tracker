@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import RegisterForm from './RegisterForm';
 import Logo from './Logo';
-import '../styles/Register.css';
+import '../styles/RegisterPage.css';
 
-const Register = () => {
+const RegisterPage = () => {
   return (
-    <div className="Register">
+    <div className="RegisterPage">
       <Logo />
       <RegisterForm />
     </div>
   );
 };
 
-export default Register;
+export default RegisterPage;
