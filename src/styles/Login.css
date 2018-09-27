@@ -1,0 +1,45 @@
+.Login {
+  background-color: white;
+  color: rgb(73, 73, 73);
+  background: cover;
+  width: 33.33%;
+  margin: auto;
+  border-radius: 4px;
+  padding-bottom: 50px;
+}
+
+.login-title {
+  font-size: 40px;
+  padding: 50px;
+}
+
+.email {
+  width: 80%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+.password {
+  width: 80%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+
+.remember-switch {
+  display: inline-block;
+  padding: 20px;
+}
+
+.login-button {
+  width: 80%;
+  height: 50px;
+  font-size: 50px;
+  background-image:
+    linear-gradient(to right top, grey);
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: rgb(85, 85, 85);
+  transform: translateY(2px);
+}
