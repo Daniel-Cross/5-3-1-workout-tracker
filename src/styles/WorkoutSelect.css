@@ -1,6 +1,5 @@
 .WorkoutSelect {
-  background: linear-gradient(to right top, rgba(104, 81, 161, 0.411) 10%, rgba(19, 81, 216, 0.747) 100%),
-    url('../images/girl.jpeg');
+  background-image: linear-gradient(to right top, #010101, #0a0811, #110e1b, #151325, #18172f);
   background-size: cover;
   color: white;
   height: 100%;
@@ -16,18 +15,12 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
+  padding-bottom: 25px;
 }
 
 .workouts>div {
   width: 40%;
   margin: 10px;
-}
-
-.Navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  margin: auto;
 }
 
 .tag {

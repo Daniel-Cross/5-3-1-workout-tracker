@@ -1,23 +1,25 @@
-import React from 'react';
-import MilitaryPress from './MilitaryPress';
-import BenchPress from './BenchPress';
-import Squat from './Squat';
-import DeadLift from './DeadLift';
-import Navbar from './Navbar';
+import React, { Component } from 'react';
+import Logout from './Logout';
 import '../styles/WorkoutSelect.css';
+import Footer from './Footer';
+import Account from './Account';
+import Exercise from './Exercise';
 
-const WorkoutSelect = () => {
-  return (
-    <div className="WorkoutSelect">
-      <h1 className="tag">Select Your Workout</h1>
-      <div className="workouts">
-        <MilitaryPress />
-        <DeadLift />
-        <BenchPress />
-        <Squat />
+class WorkoutSelect extends Component {
+  state = {};
+  render() {
+    return (
+      <div className="WorkoutSelect">
+        <Logout />
+        <Account />
+        <h1 className="tag">Select Your Workout</h1>
+        <div className="workouts">
+          <Exercise />
+        </div>
+        <Footer />
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default WorkoutSelect;
