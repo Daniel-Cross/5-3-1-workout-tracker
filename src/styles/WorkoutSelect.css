@@ -1,0 +1,39 @@
+.WorkoutSelect {
+  background: linear-gradient(to right top, rgba(104, 81, 161, 0.411) 10%, rgba(19, 81, 216, 0.747) 100%),
+    url('../images/girl.jpeg');
+  background-size: cover;
+  color: white;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.workouts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.workouts>div {
+  width: 40%;
+  margin: 10px;
+}
+
+.Navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: auto;
+}
+
+.tag {
+  border: 5px solid white;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 0 25px;
+}

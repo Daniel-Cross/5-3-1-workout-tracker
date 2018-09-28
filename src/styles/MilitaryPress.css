@@ -1,0 +1,25 @@
+.militaryPress {
+  width: 100%;
+  background: linear-gradient(to right top, rgba(0, 0, 0, 0.411) 90%, rgba(0, 0, 0, 0.747) 100%),
+    url('../images/militaryPress.jpg');
+  position: relative;
+  height: 300px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-Size: cover;
+  background-position: center 40%;
+  text-decoration: none;
+}
+
+.militaryPress:hover {
+  outline: 8px solid white;
+  color: white;
+  padding: 30px 60px;
+  outline-offset: -110px;
+}
+
+.military-text {
+  border-bottom: 5px solid white;
+}

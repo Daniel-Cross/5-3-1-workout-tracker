@@ -33,3 +33,15 @@
 .confirmPassword {
   width: 80%;
 }
+
+.email {
+  width: 80%;
+}
+
+.confirmEmail {
+  width: 80%;
+}
+
+.submit-button {
+  width: 50%;
+}
