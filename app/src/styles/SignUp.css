@@ -1,0 +1,15 @@
+.SignUp {
+  padding: 80px;
+  letter-spacing: 3px;
+  font-size: 1.5vw;
+}
+
+.signUp-link {
+  border-bottom: 3px solid white;
+  text-decoration: none;
+  color: white;
+}
+
+.signUp-link:hover {
+  color: rgb(85, 85, 85);
+}

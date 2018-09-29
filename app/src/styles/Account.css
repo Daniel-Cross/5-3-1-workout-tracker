@@ -1,0 +1,10 @@
+.avatar {
+  height: 60px;
+  width: 60px;
+  background-color: purple;
+}
+
+.Avatar {
+  float: right;
+  margin: 20px;
+}

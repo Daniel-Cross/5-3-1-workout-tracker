@@ -1,0 +1,11 @@
+.LoginPage {
+  text-align: center;
+  background: linear-gradient(to right top, rgba(104, 81, 161, 0.411) 10%, rgba(19, 81, 216, 0.747) 100%),
+    url('../images/girl.jpeg');
+  background-size: cover;
+  color: white;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}

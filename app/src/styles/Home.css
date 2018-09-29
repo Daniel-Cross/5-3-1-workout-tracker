@@ -1,0 +1,32 @@
+.Home {
+  background-image: linear-gradient(to right top, #010101, #0a0811, #110e1b, #151325, #18172f);
+  background-size: cover;
+  color: white;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.workouts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 25px;
+}
+
+.workouts>div {
+  width: 40%;
+  margin: 10px;
+}
+
+.tag {
+  border: 5px solid white;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 0 25px;
+}

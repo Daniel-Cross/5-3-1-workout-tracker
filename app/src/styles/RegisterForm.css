@@ -1,0 +1,47 @@
+.RegisterForm {
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  color: rgb(73, 73, 73);
+  border-radius: 4px;
+  padding-bottom: 50px;
+}
+
+.register-title {
+  font-size: 40px;
+  padding: 50px;
+}
+
+.registration-form {
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.firstName {
+  width: 80%;
+}
+
+.lastName {
+  width: 80%;
+}
+
+.password {
+  width: 80%;
+}
+
+.confirmPassword {
+  width: 80%;
+}
+
+.email {
+  width: 80%;
+}
+
+.confirmEmail {
+  width: 80%;
+}
+
+.submit-button {
+  width: 50%;
+}
