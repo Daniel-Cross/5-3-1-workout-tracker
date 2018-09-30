@@ -21,7 +21,7 @@ const create = (req, res) => {
 
   user
     .save()
-    .then(date => {
+    .then(data => {
       res.status(201).json(data);
     })
     .catch(error => {

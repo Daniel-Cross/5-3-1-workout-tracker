@@ -37,7 +37,7 @@ class RegisterForm extends Component {
     e.preventDefault();
 
     axios
-      .post('http:127.0.0.1:8080/users', {
+      .post('http://127.0.0.1:8080/users', {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         email: this.state.email,
@@ -49,6 +49,7 @@ class RegisterForm extends Component {
   }
 
   render() {
+    console.log(this.props.history);
     const style = {
       margin: 20
     };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import LoginPage from './components/LoginPage';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
   Switch,
   Redirect
@@ -23,6 +23,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props.history);
     return (
       <Router>
         <Switch>
