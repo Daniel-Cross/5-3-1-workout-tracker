@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Paper from '@material-ui/core/Paper';
 import '../styles/Login.css';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 class Login extends Component {
   constructor(props) {
@@ -109,5 +110,9 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  onLogin: PropTypes.func.isRequired
+};
 
 export default Login;

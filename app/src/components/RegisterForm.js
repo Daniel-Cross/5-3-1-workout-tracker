@@ -66,6 +66,7 @@ class RegisterForm extends Component {
             margin="normal"
             variant="outlined"
             required
+            onChange={this.handleInputChange}
           />
           <TextField
             label="Last Name"
@@ -75,6 +76,7 @@ class RegisterForm extends Component {
             margin="normal"
             variant="outlined"
             required
+            onChange={this.handleInputChange}
           />
           <TextField
             label="Email"
@@ -84,6 +86,7 @@ class RegisterForm extends Component {
             margin="normal"
             variant="outlined"
             required
+            onChange={this.handleInputChange}
           />
           <TextField
             variant="outlined"

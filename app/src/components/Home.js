@@ -4,6 +4,7 @@ import '../styles/Home.css';
 import Footer from './Footer';
 import Account from './Account';
 import Exercise from './Exercise';
+import PropTypes from 'prop-types';
 
 const Home = props => {
   return (
@@ -20,6 +21,13 @@ const Home = props => {
       <Footer />
     </div>
   );
+};
+
+Home.propTypes = {
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string
+  }).isRequired
 };
 
 export default Home;
