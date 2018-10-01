@@ -3,7 +3,6 @@ import Logout from './Logout';
 import WeightCalc from './WeightCalc';
 import '../styles/Home.css';
 import Footer from './Footer';
-import Account from './Account';
 import Exercise from './Exercise';
 import PropTypes from 'prop-types';
 
@@ -11,15 +10,19 @@ const Home = props => {
   return (
     <div className="Home">
       <Logout />
-      <Account />
-      <WeightCalc />
+      {/* <Account /> */}
       <div className="tag">
-        <h1>Welcome {props.user.firstName}</h1>
-        <h2>Select Your Workout</h2>
+        <h2>Welcome {props.user.firstName}</h2>
+        <h4>Select Your Workout</h4>
       </div>
       <div className="workouts">
         <Exercise />
       </div>
+      <div className="tag">
+        <h2>Weight Calculator</h2>
+        <p>Enter your one rep max for each exercise</p>
+      </div>
+      <WeightCalc />
       <Footer />
     </div>
   );

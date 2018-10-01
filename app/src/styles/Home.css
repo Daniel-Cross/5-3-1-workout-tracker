@@ -12,10 +12,9 @@
 
 .workouts {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  padding-bottom: 25px;
+  padding-bottom: 40px;
 }
 
 .workouts>div {
