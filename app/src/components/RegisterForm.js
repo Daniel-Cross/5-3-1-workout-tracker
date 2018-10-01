@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
+import Back from './Back';
 
 import '../styles/RegisterForm.css';
 
@@ -20,7 +21,7 @@ class RegisterForm extends Component {
       password: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
   }
 
   handleInputChange(event) {
@@ -33,7 +34,7 @@ class RegisterForm extends Component {
     this.setState(state => ({ showPassword: !state.showPassword }));
   };
 
-  handleLogin(e) {
+  handleRegister(e) {
     e.preventDefault();
 
     axios
@@ -55,67 +56,68 @@ class RegisterForm extends Component {
     };
 
     return (
-      <Paper className="RegisterForm" elevation={1}>
-        <div className="register-title">Register</div>
-        <form className="registration-form" onSubmit={this.handleLogin}>
-          <TextField
-            label="First Name"
-            type="text"
-            name="firstName"
-            className="firstName"
-            margin="normal"
-            variant="outlined"
-            required
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            label="Last Name"
-            type="text"
-            name="lastName"
-            className="lastName"
-            margin="normal"
-            variant="outlined"
-            required
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            label="Email"
-            type="email"
-            name="email"
-            className="email"
-            margin="normal"
-            variant="outlined"
-            required
-            onChange={this.handleInputChange}
-          />
-          <TextField
-            variant="outlined"
-            className="password"
-            name="password"
-            type={this.state.showPassword ? 'text' : 'password'}
-            label="Password"
-            required
-            margin="normal"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="Toggle password visibility"
-                    onClick={this.handleClickShowPassword}
-                  >
-                    {this.state.showPassword ? (
-                      <VisibilityOff />
-                    ) : (
-                      <Visibility />
-                    )}
-                  </IconButton>
-                </InputAdornment>
-              )
-            }}
-          />
-          {/* <TextField
+      <div className="RegisterPage">
+        <Paper className="RegisterForm" elevation={1}>
+          <div className="register-title">Register</div>
+          <form className="registration-form" onSubmit={this.handleRegister}>
+            <TextField
+              label="First Name"
+              type="text"
+              name="firstName"
+              className="firstName"
+              margin="normal"
+              variant="outlined"
+              required
+              onChange={this.handleInputChange}
+            />
+            <TextField
+              label="Last Name"
+              type="text"
+              name="lastName"
+              className="lastName"
+              margin="normal"
+              variant="outlined"
+              required
+              onChange={this.handleInputChange}
+            />
+            <TextField
+              label="Email"
+              type="email"
+              name="email"
+              className="email"
+              margin="normal"
+              variant="outlined"
+              required
+              onChange={this.handleInputChange}
+            />
+            <TextField
+              variant="outlined"
+              className="password"
+              name="password"
+              type={this.state.showPassword ? 'text' : 'password'}
+              label="Password"
+              required
+              margin="normal"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="Toggle password visibility"
+                      onClick={this.handleClickShowPassword}
+                    >
+                      {this.state.showPassword ? (
+                        <VisibilityOff />
+                      ) : (
+                        <Visibility />
+                      )}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
+            />
+            {/* <TextField
             variant="outlined"
             className="confirmPassword"
             type={this.state.showPassword ? 'text' : 'password'}
@@ -126,18 +128,20 @@ class RegisterForm extends Component {
             onChange={this.handleChange('confirmPassword')}
           /> */}
 
-          <Button
-            variant="contained"
-            color="secondary"
-            className="submit-button"
-            type="submit"
-            size="large"
-            style={style}
-          >
-            Submit
-          </Button>
-        </form>
-      </Paper>
+            <Button
+              variant="contained"
+              color="secondary"
+              className="submit-button"
+              type="submit"
+              size="large"
+              style={style}
+            >
+              Submit
+            </Button>
+          </form>
+        </Paper>
+        <Back />
+      </div>
     );
   }
 }

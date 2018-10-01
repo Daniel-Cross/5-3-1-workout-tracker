@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import LoginPage from './components/LoginPage';
+import Login from './components/Login';
+import RegisterForm from './components/RegisterForm';
+import Home from './components/Home';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from 'react-router-dom';
-import RegisterPage from './components/RegisterPage';
-import Home from './components/Home';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +23,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props.history);
     return (
       <Router>
         <Switch>
@@ -41,13 +40,11 @@ class App extends Component {
           <Route
             exact
             path="/login"
-            render={props => (
-              <LoginPage {...props} onLogin={this.handleLogin} />
-            )}
+            render={props => <Login {...props} onLogin={this.handleLogin} />}
           />
-          <Route exact path="/register" component={RegisterPage} />
+          <Route exact path="/register" component={RegisterForm} />
           <div className="App">
-            <LoginPage />
+            <Login />
           </div>
         </Switch>
       </Router>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Logout from './Logout';
+import WeightCalc from './WeightCalc';
 import '../styles/Home.css';
 import Footer from './Footer';
 import Account from './Account';
@@ -11,6 +12,7 @@ const Home = props => {
     <div className="Home">
       <Logout />
       <Account />
+      <WeightCalc />
       <div className="tag">
         <h1>Welcome {props.user.firstName}</h1>
         <h2>Select Your Workout</h2>
