@@ -8,13 +8,14 @@ import '../styles/Back.css';
 const Logout = () => {
   return (
     <div className="Logout">
-      <Link to="/" className="logout-link">
+      <Link to="/login" className="logout-link">
         <Button
           variant="extendedFab"
           aria-label="Delete"
           className="logout-button"
+          color="secondary"
         >
-          Back To Login
+          Logout
         </Button>
       </Link>
     </div>

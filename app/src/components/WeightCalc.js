@@ -30,12 +30,16 @@ class WeightCalc extends Component {
 
   handleInputChange = e => {
     const { name, value } = e.target;
-
-    console.log(this.state.lifts.find(lift => lift.state === name));
+    const match = this.state.lifts.find(lift => lift.key === name);
 
     // this.setState({
-    //   [name]: value
+    //   match
     // });
+    console.log(match);
+
+    this.setState({
+      [match]: value
+    });
   };
 
   render() {
