@@ -30,15 +30,15 @@ class WeightCalc extends Component {
 
   handleInputChange = e => {
     const { name, value } = e.target;
-    const match = this.state.lifts.find(lift => lift.key === name);
+    const lifts = JSON.stringify(this.state.lifts);
+    const liftsArray = JSON.parse(lifts);
 
-    // this.setState({
-    //   match
-    // });
-    console.log(match);
+    const liftResult = liftsArray.find(lift => lift.key === name);
+
+    liftResult.weight = value;
 
     this.setState({
-      [match]: value
+      lifts: liftsArray
     });
   };
 
@@ -83,9 +83,8 @@ class WeightCalc extends Component {
                 <h4>90% Training Max:</h4>
                 <p className="exercise-90">
                   {Math.round(
-                    this.state.lifts.find(
-                      lift => lift.state === exercises.state
-                    ).weight
+                    this.state.lifts.find(lift => lift.key === exercise.state)
+                      .weight
                   ) * 0.9}
                 </p>
               </div>
