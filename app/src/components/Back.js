@@ -8,7 +8,7 @@ import '../styles/Back.css';
 const Back = () => {
   return (
     <div className="Back">
-      <Link to="/" className="back-link">
+      <Link to="/login" className="back-link">
         <Button
           variant="extendedFab"
           aria-label="Delete"

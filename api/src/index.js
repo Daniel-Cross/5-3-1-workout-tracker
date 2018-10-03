@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const AuthController = require('./controllers/auth');
+// const RepMaxModel = require('./models/repMax');
 
 const { auth, users } = require('./routes');
 

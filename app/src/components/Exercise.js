@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   image: {
@@ -76,63 +77,93 @@ const images = [
   {
     url: 'https://i.imgur.com/myfAfEz.jpg',
     title: 'Military Press',
-    width: '50%'
+    width: '50%',
+    path: '/military-press'
   },
   {
     url: 'https://i.imgur.com/KVXmuMe.jpg',
     title: 'Dead Lift',
-    width: '50%'
+    width: '50%',
+    path: '/dead-lift'
   },
   {
     url: 'https://i.imgur.com/OI0EBha.jpg',
     title: 'Bench Press',
-    width: '50%'
+    width: '50%',
+    path: '/bench-press'
   },
   {
     url: 'https://i.imgur.com/k9qddQM.jpg',
     title: 'Squat',
-    width: '50%'
+    width: '50%',
+    path: '/squat'
   }
 ];
 
-const Exercise = props => {
-  const { classes } = props;
+class Exercise extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      links: [
+        {
+          path: '/military-press'
+        },
+        {
+          path: '/dead-lift'
+        },
+        {
+          path: '/bench-press'
+        },
+        {
+          path: '/squat'
+        }
+      ]
+    };
+  }
 
-  return (
-    <div className={classes.root}>
-      {images.map(image => (
-        <ButtonBase
-          focusRipple
-          key={image.title}
-          className={classes.image}
-          focusVisibleClassName={classes.focusVisible}
-          style={{
-            width: image.width
-          }}
-        >
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${image.url})`
-            }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subheading"
-              color="inherit"
-              className={classes.imageTitle}
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+        {images.map(image => (
+          <Link
+            to={this.state.links.find(link => link.path === image.path).path}
+          >
+            <ButtonBase
+              focusRipple
+              key={image.path}
+              className={classes.image}
+              focusVisibleClassName={classes.focusVisible}
+              style={{
+                width: image.width
+              }}
             >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
-        </ButtonBase>
-      ))}
-    </div>
-  );
-};
+              <span
+                className={classes.imageSrc}
+                style={{
+                  backgroundImage: `url(${image.url})`
+                }}
+              />
+              <span className={classes.imageBackdrop} />
+              <span className={classes.imageButton}>
+                <Typography
+                  component="span"
+                  variant="subheading"
+                  color="inherit"
+                  className={classes.imageTitle}
+                >
+                  {image.title}
+                  <span className={classes.imageMarked} />
+                </Typography>
+              </span>
+            </ButtonBase>
+          </Link>
+        ))}
+      </div>
+    );
+  }
+}
 
 Exercise.propTypes = {
   classes: PropTypes.object.isRequired
