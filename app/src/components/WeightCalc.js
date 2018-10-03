@@ -85,7 +85,8 @@ class WeightCalc extends Component {
                   {Math.round(
                     this.state.lifts.find(lift => lift.key === exercise.state)
                       .weight
-                  ) * 0.9}
+                  ) * 0.9}{' '}
+                  kg
                 </p>
               </div>
             </div>
