@@ -23,10 +23,14 @@
 
 .cycle {
   color: rgb(73, 73, 73);
-  width: 65%;
-  margin: auto;
+  width: 15%;
+  padding: 25px 0;
 }
 
 .cycle-container {
   margin: 50px 0;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-start;
 }

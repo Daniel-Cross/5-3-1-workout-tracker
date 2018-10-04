@@ -6,6 +6,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { withStyles } from '@material-ui/core/styles';
 
 class MilitaryPress extends Component {
   constructor(props) {
@@ -37,6 +43,31 @@ class MilitaryPress extends Component {
         name: 'De-Load',
         reps: [5, 5, 5, 5, 5, 5]
       }
+    ];
+
+    const CustomTableCell = withStyles(theme => ({
+      head: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white
+      },
+      body: {
+        fontSize: 14
+      }
+    }))(TableCell);
+
+    let id = 0;
+    function createData(weight, rep) {
+      id += 1;
+      return { id, weight, rep };
+    }
+
+    const rows = [
+      createData('Weight 1', 5),
+      createData('Weight 2', 5),
+      createData('Weight 3', 5),
+      createData('Weight 4', 5),
+      createData('Weight 5', 5),
+      createData('Weight 6', 5)
     ];
 
     if (this.state.value === 0) {
@@ -75,9 +106,37 @@ class MilitaryPress extends Component {
 
           <div className="cycle-container">
             <Paper className="cycle">
-              <h2 className="session-title">Session 1</h2>
-              Reps: 5<br /> Reps: 5<br /> Reps: 3<br /> Reps: 5<br /> Reps: 5
-              <br /> Reps: 5
+              {workouts.map(workout => (
+                <div className="session">
+                  <Table className="table">
+                    <TableHead>
+                      <TableRow>
+                        <CustomTableCell>Weight (kg)</CustomTableCell>
+                        <CustomTableCell numeric>Reps</CustomTableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map(row => {
+                        return (
+                          <TableRow className="table-row" key={row.id}>
+                            <CustomTableCell component="th" scope="row">
+                              {row.weight}
+                            </CustomTableCell>
+                            <CustomTableCell numeric>{row.rep}</CustomTableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                  <h2 className="session-title">{workout.name}</h2>
+                  Reps: {workout.reps[0]}
+                  <br /> Reps: {workout.reps[1]}
+                  <br /> Reps: {workout.reps[2]}
+                  <br /> Reps: {workout.reps[3]}
+                  <br /> Reps: {workout.reps[4]}
+                  <br /> Reps: {workout.reps[5]}
+                </div>
+              ))}
             </Paper>
           </div>
         </div>
