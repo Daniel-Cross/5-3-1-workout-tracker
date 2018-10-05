@@ -6,12 +6,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import { withStyles } from '@material-ui/core/styles';
 
 class MilitaryPress extends Component {
   constructor(props) {
@@ -29,45 +23,24 @@ class MilitaryPress extends Component {
     const workouts = [
       {
         name: 'Session 1',
-        reps: [5, 5, 3, 5, 5, 5]
+        reps: [5, 5, 3, 5, 5, 5],
+        weight: [20, 30, 40, 50, 60, 70]
       },
       {
         name: 'Session 2',
-        reps: [5, 5, 3, 3, 3, 3]
+        reps: [5, 5, 3, 3, 3, 3],
+        weight: [20, 30, 40, 50, 60, 70]
       },
       {
         name: 'Session 3',
-        reps: [5, 5, 3, 5, 3, 1]
+        reps: [5, 5, 3, 5, 3, 1],
+        weight: [20, 30, 40, 50, 60, 70]
       },
       {
         name: 'De-Load',
-        reps: [5, 5, 5, 5, 5, 5]
+        reps: [5, 5, 5, 5, 5, 5],
+        weight: [20, 30, 40, 50, 60, 70]
       }
-    ];
-
-    const CustomTableCell = withStyles(theme => ({
-      head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white
-      },
-      body: {
-        fontSize: 14
-      }
-    }))(TableCell);
-
-    let id = 0;
-    function createData(weight, rep) {
-      id += 1;
-      return { id, weight, rep };
-    }
-
-    const rows = [
-      createData('Weight 1', 5),
-      createData('Weight 2', 5),
-      createData('Weight 3', 5),
-      createData('Weight 4', 5),
-      createData('Weight 5', 5),
-      createData('Weight 6', 5)
     ];
 
     if (this.state.value === 0) {
@@ -105,39 +78,37 @@ class MilitaryPress extends Component {
           </Paper>
 
           <div className="cycle-container">
-            <Paper className="cycle">
-              {workouts.map(workout => (
+            {workouts.map(workout => (
+              <Paper className="cycle">
                 <div className="session">
-                  <Table className="table">
-                    <TableHead>
-                      <TableRow>
-                        <CustomTableCell>Weight (kg)</CustomTableCell>
-                        <CustomTableCell numeric>Reps</CustomTableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {rows.map(row => {
-                        return (
-                          <TableRow className="table-row" key={row.id}>
-                            <CustomTableCell component="th" scope="row">
-                              {row.weight}
-                            </CustomTableCell>
-                            <CustomTableCell numeric>{row.rep}</CustomTableCell>
-                          </TableRow>
-                        );
-                      })}
-                    </TableBody>
-                  </Table>
                   <h2 className="session-title">{workout.name}</h2>
-                  Reps: {workout.reps[0]}
-                  <br /> Reps: {workout.reps[1]}
-                  <br /> Reps: {workout.reps[2]}
-                  <br /> Reps: {workout.reps[3]}
-                  <br /> Reps: {workout.reps[4]}
-                  <br /> Reps: {workout.reps[5]}
+                  <div className="routine">
+                    <div className="weights">
+                      <span className="weight-title">Weight (kg):</span>
+                      <br />
+                      <br />
+                      {workout.weight[0]}
+                      <br /> {workout.weight[1]}
+                      <br /> {workout.weight[2]}
+                      <br /> {workout.weight[3]}
+                      <br /> {workout.weight[4]}
+                      <br /> {workout.weight[5]}
+                    </div>
+                    <div className="reps">
+                      <span className="weight-title">Reps:</span>
+                      <br />
+                      <br />
+                      {workout.reps[0]}
+                      <br /> {workout.reps[1]}
+                      <br /> {workout.reps[2]}
+                      <br /> {workout.reps[3]}
+                      <br /> {workout.reps[4]}
+                      <br /> {workout.reps[5]}
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </Paper>
+              </Paper>
+            ))}
           </div>
         </div>
       );
@@ -176,10 +147,37 @@ class MilitaryPress extends Component {
           </Paper>
 
           <div className="cycle-container">
-            <Paper className="cycle">
-              Reps: 5<br /> Reps: 5<br /> Reps: 3<br /> Reps: 3<br /> Reps: 3
-              <br /> Reps: 3
-            </Paper>
+            {workouts.map(workout => (
+              <Paper className="cycle">
+                <div className="session">
+                  <h2 className="session-title">{workout.name}</h2>
+                  <div className="routine">
+                    <div className="weights">
+                      <span className="weight-title">Weight (kg):</span>
+                      <br />
+                      <br />
+                      {workout.weight[0]}
+                      <br /> {workout.weight[1]}
+                      <br /> {workout.weight[2]}
+                      <br /> {workout.weight[3]}
+                      <br /> {workout.weight[4]}
+                      <br /> {workout.weight[5]}
+                    </div>
+                    <div className="reps">
+                      <span className="weight-title">Reps:</span>
+                      <br />
+                      <br />
+                      {workout.reps[0]}
+                      <br /> {workout.reps[1]}
+                      <br /> {workout.reps[2]}
+                      <br /> {workout.reps[3]}
+                      <br /> {workout.reps[4]}
+                      <br /> {workout.reps[5]}
+                    </div>
+                  </div>
+                </div>
+              </Paper>
+            ))}
           </div>
         </div>
       );
@@ -218,10 +216,37 @@ class MilitaryPress extends Component {
           </Paper>
 
           <div className="cycle-container">
-            <Paper className="cycle">
-              Reps: 5<br /> Reps: 5<br /> Reps: 3<br /> Reps: 5<br /> Reps: 3
-              <br /> Reps: 1
-            </Paper>
+            {workouts.map(workout => (
+              <Paper className="cycle">
+                <div className="session">
+                  <h2 className="session-title">{workout.name}</h2>
+                  <div className="routine">
+                    <div className="weights">
+                      <span className="weight-title">Weight (kg):</span>
+                      <br />
+                      <br />
+                      {workout.weight[0]}
+                      <br /> {workout.weight[1]}
+                      <br /> {workout.weight[2]}
+                      <br /> {workout.weight[3]}
+                      <br /> {workout.weight[4]}
+                      <br /> {workout.weight[5]}
+                    </div>
+                    <div className="reps">
+                      <span className="weight-title">Reps:</span>
+                      <br />
+                      <br />
+                      {workout.reps[0]}
+                      <br /> {workout.reps[1]}
+                      <br /> {workout.reps[2]}
+                      <br /> {workout.reps[3]}
+                      <br /> {workout.reps[4]}
+                      <br /> {workout.reps[5]}
+                    </div>
+                  </div>
+                </div>
+              </Paper>
+            ))}
           </div>
         </div>
       );
@@ -260,10 +285,37 @@ class MilitaryPress extends Component {
           </Paper>
 
           <div className="cycle-container">
-            <Paper className="cycle">
-              Reps: 5<br /> Reps: 5<br /> Reps: 5<br /> Reps: 5<br /> Reps: 5
-              <br /> Reps: 5
-            </Paper>
+            {workouts.map(workout => (
+              <Paper className="cycle">
+                <div className="session">
+                  <h2 className="session-title">{workout.name}</h2>
+                  <div className="routine">
+                    <div className="weights">
+                      <span className="weight-title">Weight (kg):</span>
+                      <br />
+                      <br />
+                      {workout.weight[0]}
+                      <br /> {workout.weight[1]}
+                      <br /> {workout.weight[2]}
+                      <br /> {workout.weight[3]}
+                      <br /> {workout.weight[4]}
+                      <br /> {workout.weight[5]}
+                    </div>
+                    <div className="reps">
+                      <span className="weight-title">Reps:</span>
+                      <br />
+                      <br />
+                      {workout.reps[0]}
+                      <br /> {workout.reps[1]}
+                      <br /> {workout.reps[2]}
+                      <br /> {workout.reps[3]}
+                      <br /> {workout.reps[4]}
+                      <br /> {workout.reps[5]}
+                    </div>
+                  </div>
+                </div>
+              </Paper>
+            ))}
           </div>
         </div>
       );
@@ -302,11 +354,37 @@ class MilitaryPress extends Component {
           </Paper>
 
           <div className="cycle-container">
-            <Paper className="cycle">
-              Gym
-              <br /> Reps: 5<br /> Reps: 3<br /> Reps: 5<br /> Reps: 5<br />{' '}
-              Reps: 5
-            </Paper>
+            {workouts.map(workout => (
+              <Paper className="cycle">
+                <div className="session">
+                  <h2 className="session-title">{workout.name}</h2>
+                  <div className="routine">
+                    <div className="weights">
+                      <span className="weight-title">Weight (kg):</span>
+                      <br />
+                      <br />
+                      {workout.weight[0]}
+                      <br /> {workout.weight[1]}
+                      <br /> {workout.weight[2]}
+                      <br /> {workout.weight[3]}
+                      <br /> {workout.weight[4]}
+                      <br /> {workout.weight[5]}
+                    </div>
+                    <div className="reps">
+                      <span className="weight-title">Reps:</span>
+                      <br />
+                      <br />
+                      {workout.reps[0]}
+                      <br /> {workout.reps[1]}
+                      <br /> {workout.reps[2]}
+                      <br /> {workout.reps[3]}
+                      <br /> {workout.reps[4]}
+                      <br /> {workout.reps[5]}
+                    </div>
+                  </div>
+                </div>
+              </Paper>
+            ))}
           </div>
         </div>
       );

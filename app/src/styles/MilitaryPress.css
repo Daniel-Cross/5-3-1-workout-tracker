@@ -10,8 +10,18 @@
   text-align: center;
 }
 
+.session-title {
+  padding: 0;
+  margin: auto;
+}
+
+.routine {
+  display: flex;
+  flex-direction: row;
+}
+
 .workout-cycle-tabs {
-  width: 50%;
+  width: 70%;
   margin: auto;
 }
 
@@ -23,14 +33,24 @@
 
 .cycle {
   color: rgb(73, 73, 73);
-  width: 15%;
+  width: 20%;
   padding: 25px 0;
+  margin: 25px;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
 }
 
-.cycle-container {
-  margin: 50px 0;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-evenly;
-  align-content: flex-start;
+.weights {
+  margin: 10px;
+}
+
+.reps {
+  margin: 10px;
+}
+
+.weight-title {
+  border-bottom: 2px solid rgb(73, 73, 73);
+  margin: 12px;
 }

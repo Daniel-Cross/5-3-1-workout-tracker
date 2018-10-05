@@ -1,25 +1,56 @@
-.squat {
-  width: 100%;
-  background: linear-gradient(to right top, rgba(0, 0, 0, 0.411) 90%, rgba(0, 0, 0, 0.747) 100%),
-    url('../images/squat.jpg');
-  position: relative;
-  height: 300px;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-Size: cover;
-  background-position: center 40%;
-  text-decoration: none;
-}
-
-.squat:hover {
-  outline: 8px solid white;
+.Squat {
+  background-image: linear-gradient(to right top, #010101, #0a0811, #110e1b, #151325, #18172f);
+  background-size: cover;
   color: white;
-  padding: 30px 60px;
-  outline-offset: -110px;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  text-align: center;
 }
 
-.squat-text {
-  border-bottom: 5px solid white;
+.session-title {
+  padding: 0;
+  margin: auto;
+}
+
+.routine {
+  display: flex;
+  flex-direction: row;
+}
+
+.workout-cycle-tabs {
+  width: 70%;
+  margin: auto;
+}
+
+.home-button {
+  text-decoration: none;
+  float: left;
+  margin: 1%;
+}
+
+.cycle {
+  color: rgb(73, 73, 73);
+  width: 20%;
+  padding: 25px 0;
+  margin: 25px;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+
+.weights {
+  margin: 10px;
+}
+
+.reps {
+  margin: 10px;
+}
+
+.weight-title {
+  border-bottom: 2px solid rgb(73, 73, 73);
+  margin: 12px;
 }
