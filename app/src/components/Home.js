@@ -6,17 +6,38 @@ import Footer from './Footer';
 import Exercise from './Exercise';
 import PropTypes from 'prop-types';
 import SaveButton from './SaveButton';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Paper from '@material-ui/core/Paper';
+
+// TODO Implement a change weight function KG => LBS
+// import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+// import Paper from '@material-ui/core/Paper';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      weightMetric: 'kg'
+      weightMetric: 'kg',
+
+      lifts: [
+        {
+          key: 'militaryPress',
+          weight: 0
+        },
+        {
+          key: 'deadLift',
+          weight: 0
+        },
+        {
+          key: 'benchPress',
+          weight: 0
+        },
+        {
+          key: 'squat',
+          weight: 0
+        }
+      ]
     };
   }
 
@@ -24,6 +45,20 @@ class Home extends Component {
     const { value } = e.target;
 
     this.setState({ [this.state.weightMetric]: value });
+  };
+
+  handleInputChange = e => {
+    const { name, value } = e.target;
+    const lifts = JSON.stringify(this.state.lifts);
+    const liftsArray = JSON.parse(lifts);
+
+    const liftResult = liftsArray.find(lift => lift.key === name);
+
+    liftResult.weight = value;
+
+    this.setState({
+      lifts: liftsArray
+    });
   };
 
   render() {
@@ -36,13 +71,16 @@ class Home extends Component {
           <h4>Select Your Workout</h4>
         </div>
         <div className="workouts">
-          <Exercise />
+          <Exercise lifts={this.state.lifts} />
         </div>
         <div className="tag">
           <h2>Weight Calculator</h2>
           <p>Enter your one rep max for each exercise</p>
         </div>
-        {/* <Paper className="weight-select">
+
+        {/* TODO Weight change function KG => LBS
+
+        <Paper className="weight-select">
           <FormControl>
             <InputLabel htmlFor="age-simple">Weight</InputLabel>
             <Select
@@ -60,7 +98,11 @@ class Home extends Component {
             </Select>
           </FormControl>
         </Paper> */}
-        <WeightCalc />
+
+        <WeightCalc
+          handleInputChange={this.handleInputChange}
+          lifts={this.state.lifts}
+        />
         <SaveButton />
         <Footer />
       </div>

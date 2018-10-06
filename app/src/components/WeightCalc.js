@@ -7,40 +7,41 @@ class WeightCalc extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lifts: [
-        {
-          key: 'militaryPress',
-          weight: 0
-        },
-        {
-          key: 'deadLift',
-          weight: 0
-        },
-        {
-          key: 'benchPress',
-          weight: 0
-        },
-        {
-          key: 'squat',
-          weight: 0
-        }
-      ]
+      // State passed passed up and available in Home component
+      // lifts: [
+      //   {
+      //     key: 'militaryPress',
+      //     weight: 0
+      //   },
+      //   {
+      //     key: 'deadLift',
+      //     weight: 0
+      //   },
+      //   {
+      //     key: 'benchPress',
+      //     weight: 0
+      //   },
+      //   {
+      //     key: 'squat',
+      //     weight: 0
+      //   }
+      // ]
     };
   }
+  // Handle method now in Home component, state passed up.
+  // handleInputChange = e => {
+  //   const { name, value } = e.target;
+  //   const lifts = JSON.stringify(this.state.lifts);
+  //   const liftsArray = JSON.parse(lifts);
 
-  handleInputChange = e => {
-    const { name, value } = e.target;
-    const lifts = JSON.stringify(this.state.lifts);
-    const liftsArray = JSON.parse(lifts);
+  //   const liftResult = liftsArray.find(lift => lift.key === name);
 
-    const liftResult = liftsArray.find(lift => lift.key === name);
+  //   liftResult.weight = value;
 
-    liftResult.weight = value;
-
-    this.setState({
-      lifts: liftsArray
-    });
-  };
+  //   this.setState({
+  //     lifts: liftsArray
+  //   });
+  // };
 
   render() {
     const exercises = [
@@ -74,16 +75,16 @@ class WeightCalc extends Component {
                 type="number"
                 className="workoutInput"
                 margin="normal"
-                value={this.state.lifts.find(
+                value={this.props.lifts.find(
                   lift => lift.state === exercise.state
                 )}
-                onChange={this.handleInputChange}
+                onChange={this.props.handleInputChange}
               />
               <div className="exercise-body">
                 <h4>90% Training Max:</h4>
                 <p className="exercise-90">
                   {Math.round(
-                    this.state.lifts.find(lift => lift.key === exercise.state)
+                    this.props.lifts.find(lift => lift.key === exercise.state)
                       .weight
                   ) * 0.9}{' '}
                   kg
