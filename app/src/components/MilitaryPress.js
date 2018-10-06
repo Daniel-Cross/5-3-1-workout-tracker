@@ -24,22 +24,66 @@ class MilitaryPress extends Component {
       {
         name: 'Session 1',
         reps: [5, 5, 3, 5, 5, 5],
-        weight: [20, 30, 40, 50, 60, 70]
+        weight: [20, 30, 40, 50, 60, 70],
+        assistance: [
+          'Wide Upright Row',
+          'Face Pulls',
+          'Shoulder Shrugs',
+          'Overhead Barbell Curl',
+          'Dumbbell Hammer Curl',
+          'EZ Bar Curl',
+          'JM Press',
+          'Lying Triceps Extensions',
+          'Triceps Dip'
+        ]
       },
       {
         name: 'Session 2',
         reps: [5, 5, 3, 3, 3, 3],
-        weight: [20, 30, 40, 50, 60, 70]
+        weight: [20, 30, 40, 50, 60, 70],
+        assistance: [
+          'Wide Upright Row',
+          'Face Pulls',
+          'Shoulder Shrugs',
+          'Overhead Barbell Curl',
+          'Dumbbell Hammer Curl',
+          'EZ Bar Curl',
+          'JM Press',
+          'Lying Triceps Extensions',
+          'Triceps Dip'
+        ]
       },
       {
         name: 'Session 3',
         reps: [5, 5, 3, 5, 3, 1],
-        weight: [20, 30, 40, 50, 60, 70]
+        weight: [20, 30, 40, 50, 60, 70],
+        assistance: [
+          'Wide Upright Row',
+          'Face Pulls',
+          'Shoulder Shrugs',
+          'Overhead Barbell Curl',
+          'Dumbbell Hammer Curl',
+          'EZ Bar Curl',
+          'JM Press',
+          'Lying Triceps Extensions',
+          'Triceps Dip'
+        ]
       },
       {
         name: 'De-Load',
         reps: [5, 5, 5, 5, 5, 5],
-        weight: [20, 30, 40, 50, 60, 70]
+        weight: [20, 30, 40, 50, 60, 70],
+        assistance: [
+          'Wide Upright Row',
+          'Face Pulls',
+          'Shoulder Shrugs',
+          'Overhead Barbell Curl',
+          'Dumbbell Hammer Curl',
+          'EZ Bar Curl',
+          'JM Press',
+          'Lying Triceps Extensions',
+          'Triceps Dip'
+        ]
       }
     ];
 
