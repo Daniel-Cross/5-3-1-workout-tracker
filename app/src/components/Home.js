@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Exercise from './Exercise';
 import PropTypes from 'prop-types';
 import SaveButton from './SaveButton';
+import axios from 'axios';
 
 // TODO Implement a change weight function KG => LBS
 // import InputLabel from '@material-ui/core/InputLabel';
@@ -37,7 +38,10 @@ class Home extends Component {
           key: 'squat',
           weight: 0
         }
-      ]
+      ],
+      alertMessage: '',
+      isSuccess: false,
+      isError: false
     };
   }
 

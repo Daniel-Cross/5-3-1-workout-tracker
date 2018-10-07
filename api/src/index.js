@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const AuthController = require('./controllers/auth');
-// const RepMaxModel = require('./models/repMax');
+const RepMaxController = require('./controllers/repMax');
 
 const { auth, users } = require('./routes');
 
@@ -18,6 +18,7 @@ app.use(cors());
 app.use('/users', users);
 
 app.post('/login', AuthController.login);
+app.post('/RepMax', RepMaxController.post);
 
 mongoose.connect(
   process.env.DATABASE_URL,

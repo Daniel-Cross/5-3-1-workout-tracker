@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import '../styles/WeightCalc.css';
+import axios from 'axios';
 
 class WeightCalc extends Component {
   constructor(props) {

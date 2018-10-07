@@ -117,7 +117,8 @@ class Exercise extends Component {
         {
           path: '/squat'
         }
-      ]
+      ],
+      lifts: this.props.lifts
     };
   }
 
