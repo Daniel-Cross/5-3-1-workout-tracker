@@ -20,7 +20,7 @@ class SaveButton extends Component {
           className="save-button"
           type="submit"
           style={style}
-          onClick={this.handleClick}
+          onClick={this.props.handleOnClick}
         >
           Save
         </Button>

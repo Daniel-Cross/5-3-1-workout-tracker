@@ -7,7 +7,17 @@ exports.post = (req, res) => {
     benchPress: req.body.benchPress,
     squat: req.body.squat
   });
+
   repMax.save((err, repMaxCreated) => {
     res.json(repMaxCreated);
   });
+
+  // repMax.get = (req, res) => {
+  //   RepMax.findById(req.params.repMaxId, (err, repMax) => {
+  //     if (err) {
+  //       res.json('Something went wrong');
+  //     }
+  //     res.json(repMax);
+  //   });
+  // };
 };

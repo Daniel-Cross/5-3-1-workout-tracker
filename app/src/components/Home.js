@@ -45,11 +45,11 @@ class Home extends Component {
     };
   }
 
-  handleChange = e => {
-    const { value } = e.target;
+  // handleChange = e => {
+  //   const { value } = e.target;
 
-    this.setState({ [this.state.weightMetric]: value });
-  };
+  //   this.setState({ [this.state.weightMetric]: value });
+  // };
 
   handleInputChange = e => {
     const { name, value } = e.target;
@@ -65,7 +65,22 @@ class Home extends Component {
     });
   };
 
+  handleOnClick = () => {
+    axios
+      .post('http://localhost:8080/RepMax', this.state.lifts)
+      .then(() =>
+        this.setState({ isSuccess: true, alertMessage: 'RepMax added.' })
+      )
+      .catch(() => {
+        this.setState({
+          alertMessage: 'Server error. Please try again later',
+          isError: true
+        });
+      });
+  };
+
   render() {
+    console.log(this.state.lifts);
     return (
       <div className="Home">
         <Logout />
@@ -107,7 +122,10 @@ class Home extends Component {
           handleInputChange={this.handleInputChange}
           lifts={this.state.lifts}
         />
-        <SaveButton />
+        <SaveButton
+          handleOnClick={this.handleOnClick}
+          lifts={this.state.lifts}
+        />
         <Footer />
       </div>
     );

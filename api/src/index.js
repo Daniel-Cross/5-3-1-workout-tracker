@@ -19,6 +19,7 @@ app.use('/users', users);
 
 app.post('/login', AuthController.login);
 app.post('/RepMax', RepMaxController.post);
+// app.get('/RepMax:repMaxId', RepMaxController.get);
 
 mongoose.connect(
   process.env.DATABASE_URL,
