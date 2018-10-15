@@ -1,6 +1,7 @@
 const RepMax = require('../models/repMax');
 
 exports.post = (req, res) => {
+  console.log(req.body);
   const repMax = new RepMax({
     militaryPress: req.body.militaryPress,
     deadLift: req.body.deadLift,
