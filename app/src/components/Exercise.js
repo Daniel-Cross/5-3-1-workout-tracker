@@ -171,30 +171,3 @@ Exercise.propTypes = {
 };
 
 export default withStyles(styles)(Exercise);
-
-// const Exercise = props => {
-//   const { exercise } = props;
-//   const style = {};
-
-//   return (
-//     <div className="Exercise" style={style}>
-//       <ButtonBase
-//         focusRipple
-//         key={exercise}
-//         className="exercise"
-//         focusVisibleClassName={exercise}
-//       >
-//         <Typography
-//           component="span"
-//           variant="display1"
-//           color="inherit"
-//           className="exercise-text"
-//         >
-//           {exercise}
-//         </Typography>
-//       </ButtonBase>
-//     </div>
-//   );
-// };
-
-// export default Exercise;

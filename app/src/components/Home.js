@@ -9,11 +9,6 @@ import SaveButton from './SaveButton';
 import axios from 'axios';
 
 // TODO Implement a change weight function KG => LBS
-// import InputLabel from '@material-ui/core/InputLabel';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import FormControl from '@material-ui/core/FormControl';
-// import Select from '@material-ui/core/Select';
-// import Paper from '@material-ui/core/Paper';
 
 class Home extends Component {
   constructor(props) {
@@ -44,12 +39,6 @@ class Home extends Component {
       isError: false
     };
   }
-
-  // handleChange = e => {
-  //   const { value } = e.target;
-
-  //   this.setState({ [this.state.weightMetric]: value });
-  // };
 
   handleInputChange = e => {
     const { name, value } = e.target;

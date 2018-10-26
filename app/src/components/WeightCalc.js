@@ -7,42 +7,8 @@ import axios from 'axios';
 class WeightCalc extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      // State passed passed up and available in Home component
-      // lifts: [
-      //   {
-      //     key: 'militaryPress',
-      //     weight: 0
-      //   },
-      //   {
-      //     key: 'deadLift',
-      //     weight: 0
-      //   },
-      //   {
-      //     key: 'benchPress',
-      //     weight: 0
-      //   },
-      //   {
-      //     key: 'squat',
-      //     weight: 0
-      //   }
-      // ]
-    };
+    this.state = {};
   }
-  // Handle method now in Home component, state passed up.
-  // handleInputChange = e => {
-  //   const { name, value } = e.target;
-  //   const lifts = JSON.stringify(this.state.lifts);
-  //   const liftsArray = JSON.parse(lifts);
-
-  //   const liftResult = liftsArray.find(lift => lift.key === name);
-
-  //   liftResult.weight = value;
-
-  //   this.setState({
-  //     lifts: liftsArray
-  //   });
-  // };
 
   render() {
     const exercises = [
